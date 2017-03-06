@@ -69,6 +69,7 @@
 //    self.decodeLabel.text = [self.rsa rsaDecryptString:self.encryptLabel.text];
     
     //RSA加密，利用公钥和私钥字符串进行加解密
+    //！！！！！！切记，ios10以后要打开keyChain share，否则无用。
     self.encryptLabel.text = [RSAUtil encryptString:self.textfield.text publicKey:self.pubkey];
     self.decodeLabel.text = [RSAUtil decryptString:self.encryptLabel.text privateKey:self.privkey];
     
